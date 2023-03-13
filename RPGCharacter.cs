@@ -8,6 +8,7 @@ namespace RPGCharacterRoller
 {
     internal class RPGCharacter
     {
+        #region Fields
         // Fields
         private int _strength;
         private int _intelligence;
@@ -21,9 +22,11 @@ namespace RPGCharacterRoller
         private int _maxStamina = 20;
         private int _maxStrength = 20;
         private int _maxWisdom = 20;
+        private List<RPGCharacter> _partyMembers = new List<RPGCharacter>();
 
         private CharacterClasses _characterClasses = CharacterClasses.None;
         private Random _rng = new Random();
+        #endregion
 
         #region Properties
         public string Name { get; set; }
@@ -33,6 +36,11 @@ namespace RPGCharacterRoller
         {
             get { return _characterClasses; }
             set { _characterClasses = value; }
+        }
+        public List<RPGCharacter> PartyMembers
+        {
+            get { return _partyMembers; }
+            set { _partyMembers = value; }
         }
         public int Charisma { get { return _charisma; } }
         public int Dexterity { get { return _dexterity; } }
@@ -47,6 +55,7 @@ namespace RPGCharacterRoller
             Roll();
         }
 
+        #region Roll
         public void Roll()
         {
             _charisma = _rng.Next(1, _maxCharisma + 1);
@@ -56,9 +65,11 @@ namespace RPGCharacterRoller
             _strength = _rng.Next(1, _maxStrength + 1);
             _wisdom = _rng.Next(1, _maxWisdom + 1);
         }
+        #endregion
 
     }
 
+    #region Character Classes
     public enum CharacterClasses
     {
         None = 0,
@@ -69,4 +80,6 @@ namespace RPGCharacterRoller
         Goliath,
         Paladin,
     }
+    #endregion
+
 }

@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Margin="91,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="56,54,0,0" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Margin="56,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="61,54,0,0" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top"/>
         <Button x:Name="buttonUpdateName" Content="Update Name" HorizontalAlignment="Left" Margin="51,229,0,0" VerticalAlignment="Top" Width="89" Click="buttonUpdateName_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="56,124,0,0" TextWrapping="Wrap" Text="STR" VerticalAlignment="Top"/>
         <TextBlock x:Name="textStrength" HorizontalAlignment="Left" Margin="92,124,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
@@ -23,6 +23,17 @@
         <TextBlock x:Name="textWisdom" HorizontalAlignment="Left" Margin="170,144,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
         <TextBlock x:Name="textCharisma" HorizontalAlignment="Left" Margin="170,168,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
         <Button x:Name="buttonReroll" Content="Re-Roll" HorizontalAlignment="Left" Margin="170,229,0,0" VerticalAlignment="Top" Width="71" Click="buttonReroll_Click"/>
+        <ListBox x:Name="listPotentialMembers" Margin="270,128,364,159" BorderBrush="#FFC1C305">
+            <ListBoxItem Background="#FF3E3E3E" Content="Admiral Adolf Wilker"/>
+            <ListBoxItem Background="#FF1ABB0D" Content="Gaius Julius"/>
+            <ListBoxItem Background="#FF7D0E0E" Content="Augustus Octavius"/>
+            <ListBoxItem Background="#FF6C0784" Content="Basileus Constantine XI"/>
+            <ListBoxItem Background="#FFE4BF12" Content="King Arther"/>
+            <ListBoxItem Background="#FFFF00DE" Content="H. H. Holmes"/>
+        </ListBox>
+        <TextBlock HorizontalAlignment="Left" Margin="273,107,0,0" TextWrapping="Wrap" Text="Potential part Members:" VerticalAlignment="Top"/>
+        <ListBox x:Name="listPartyMembers" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="451,128,47,159"/>
+        <TextBlock HorizontalAlignment="Left" Margin="451,107,0,0" TextWrapping="Wrap" Text="Party Members:" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

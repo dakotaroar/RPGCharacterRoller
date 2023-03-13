@@ -21,14 +21,17 @@ namespace RPGCharacterRoller
     public partial class MainWindow : Window
     {
         private RPGCharacter _character = new RPGCharacter();
+        private Random _rng = new Random();
 
         public MainWindow()
         {
             InitializeComponent();
             updateStats();
             
+
         }
 
+        #region buttonUpdateName and buttonReroll 
         private void buttonUpdateName_Click(object sender, RoutedEventArgs e)
         {
             _character.Name = textBoxName.Text;
@@ -39,8 +42,34 @@ namespace RPGCharacterRoller
             _character.Roll();
             updateStats();
 
-        }
+            double odds = .5;
 
+            _character.PartyMembers.Clear();
+
+            foreach (ListBoxItem i in listPotentialMembers.Items)
+            {
+                if (_rng.NextDouble() < odds)
+                {
+                    RPGCharacter c = new RPGCharacter()
+                    {
+                        Name = i.Content.ToString()
+                    };
+                    _character.PartyMembers.Add(c);
+                }
+            }
+
+            listPartyMembers.Items.Clear();
+            foreach (RPGCharacter c in _character.PartyMembers)
+            {
+                ListBoxItem i = new ListBoxItem();
+                i.Content = $"{c.Name} STR: {c.Strength} INT: {c.Intelligence}";
+                listPartyMembers.Items.Add(i);
+            }
+
+        }
+        #endregion
+
+        #region Stat updating
         private void updateStats()
         {
             textStrength.Text = _character.Strength.ToString();
@@ -50,5 +79,7 @@ namespace RPGCharacterRoller
             textStamina.Text= _character.Stamina.ToString();
             textWisdom.Text= _character.Wisdom.ToString();
         }
+        #endregion
+
     }
 }
