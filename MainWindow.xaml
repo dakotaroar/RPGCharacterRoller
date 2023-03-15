@@ -7,21 +7,24 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.Background>
+            <ImageBrush TileMode="None" Stretch="Fill" ImageSource="/Screenshot (40).png"/>
+        </Grid.Background>
         <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Margin="56,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="61,54,0,0" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top"/>
-        <Button x:Name="buttonUpdateName" Content="Update Name" HorizontalAlignment="Left" Margin="51,229,0,0" VerticalAlignment="Top" Width="89" Click="buttonUpdateName_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="56,124,0,0" TextWrapping="Wrap" Text="STR" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textStrength" HorizontalAlignment="Left" Margin="92,124,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="56,145,0,0" TextWrapping="Wrap" Text="INT" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textIntelligence" HorizontalAlignment="Left" Margin="92,144,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="56,168,0,0" TextWrapping="Wrap" Text="DEX" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textDexterity" HorizontalAlignment="Left" Margin="92,168,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="134,123,0,0" TextWrapping="Wrap" Text="STA" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="134,143,0,0" TextWrapping="Wrap" Text="WIS" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="134,167,0,0" TextWrapping="Wrap" Text="CHR" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textStamina" HorizontalAlignment="Left" Margin="170,124,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textWisdom" HorizontalAlignment="Left" Margin="170,144,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textCharisma" HorizontalAlignment="Left" Margin="170,168,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="61,54,0,0" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top" Background="White"/>
+        <Button x:Name="buttonUpdateName" Content="Update Name" HorizontalAlignment="Left" Margin="51,229,0,0" VerticalAlignment="Top" Width="89" Click="buttonUpdateName_Click" Background="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="56,124,0,0" TextWrapping="Wrap" Text="STR" VerticalAlignment="Top" Background="White"/>
+        <TextBlock x:Name="textStrength" HorizontalAlignment="Left" Margin="92,124,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Background="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="56,145,0,0" TextWrapping="Wrap" Text="INT" VerticalAlignment="Top" Background="White"/>
+        <TextBlock x:Name="textIntelligence" HorizontalAlignment="Left" Margin="92,144,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Background="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="56,168,0,0" TextWrapping="Wrap" Text="DEX" VerticalAlignment="Top" Background="White"/>
+        <TextBlock x:Name="textDexterity" HorizontalAlignment="Left" Margin="92,168,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Background="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="134,123,0,0" TextWrapping="Wrap" Text="STA" VerticalAlignment="Top" Background="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="134,143,0,0" TextWrapping="Wrap" Text="WIS" VerticalAlignment="Top" Background="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="134,167,0,0" TextWrapping="Wrap" Text="CHR" VerticalAlignment="Top" Background="White"/>
+        <TextBlock x:Name="textStamina" HorizontalAlignment="Left" Margin="170,124,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Background="White"/>
+        <TextBlock x:Name="textWisdom" HorizontalAlignment="Left" Margin="170,144,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Background="White"/>
+        <TextBlock x:Name="textCharisma" HorizontalAlignment="Left" Margin="170,168,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Background="White"/>
         <Button x:Name="buttonReroll" Content="Re-Roll" HorizontalAlignment="Left" Margin="170,229,0,0" VerticalAlignment="Top" Width="71" Click="buttonReroll_Click"/>
         <ListBox x:Name="listPotentialMembers" Margin="270,128,364,159" BorderBrush="#FFC1C305">
             <ListBoxItem Background="#FF3E3E3E" Content="Admiral Adolf Wilker"/>
@@ -31,9 +34,9 @@
             <ListBoxItem Background="#FFE4BF12" Content="King Arther"/>
             <ListBoxItem Background="#FFFF00DE" Content="H. H. Holmes"/>
         </ListBox>
-        <TextBlock HorizontalAlignment="Left" Margin="273,107,0,0" TextWrapping="Wrap" Text="Potential part Members:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="273,107,0,0" TextWrapping="Wrap" Text="Potential part Members:" VerticalAlignment="Top" Background="White"/>
         <ListBox x:Name="listPartyMembers" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="451,128,47,159"/>
-        <TextBlock HorizontalAlignment="Left" Margin="451,107,0,0" TextWrapping="Wrap" Text="Party Members:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="451,107,0,0" TextWrapping="Wrap" Text="Party Members:" VerticalAlignment="Top" Background="White"/>
 
     </Grid>
 </Window>

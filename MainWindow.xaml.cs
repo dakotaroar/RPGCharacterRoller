@@ -20,14 +20,20 @@ namespace RPGCharacterRoller
     /// </summary>
     public partial class MainWindow : Window
     {
-        private RPGCharacter _character = new RPGCharacter();
+        private RPGCharacter _character;
         private Random _rng = new Random();
 
         public MainWindow()
         {
             InitializeComponent();
+            _character = new RPGCharacter(_rng);
             updateStats();
-            
+            string junk = "";
+            for (int i = 0; i < 10; i++)
+            {
+                junk += $"{RPGCharacter.RollDice(5, 20, _rng).ToString()}\n";
+            }
+            MessageBox.Show(junk);
 
         }
 
@@ -50,7 +56,7 @@ namespace RPGCharacterRoller
             {
                 if (_rng.NextDouble() < odds)
                 {
-                    RPGCharacter c = new RPGCharacter()
+                    RPGCharacter c = new RPGCharacter(_rng)
                     {
                         Name = i.Content.ToString()
                     };
@@ -58,10 +64,34 @@ namespace RPGCharacterRoller
                 }
             }
 
+            // Junk test code
+            //if (_character.PartyMembers.Count > 0)
+            //{
+                //_character.PartyMembers[0].FavoriteColor = Brushes.SteelBlue;
+            //}
+            
+
+
+            Brush color1 = Brushes.DarkViolet;
+            Brush color2 = Brushes.Gold;
+
             listPartyMembers.Items.Clear();
             foreach (RPGCharacter c in _character.PartyMembers)
             {
                 ListBoxItem i = new ListBoxItem();
+                if (c.FavoriteColor != null)
+                {
+                    i.Background  =c.FavoriteColor;
+                }
+                else if (listPartyMembers.Items.Count % 2 == 0)
+                {
+                    i.Background = color1;
+                }
+                else
+                {
+                    i.Background = color2;
+                }
+
                 i.Content = $"{c.Name} STR: {c.Strength} INT: {c.Intelligence}";
                 listPartyMembers.Items.Add(i);
             }

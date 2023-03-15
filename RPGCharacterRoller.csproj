@@ -7,4 +7,20 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Dakota_CyberPatriot_Demo_Certificate_2022-09-28_12-59-55.png" />
+    <None Remove="Screenshot %2819%29.png" />
+    <None Remove="Screenshot %2839%29.png" />
+    <None Remove="Screenshot %2840%29.png" />
+    <None Remove="Screenshot %2868%29.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Dakota_CyberPatriot_Demo_Certificate_2022-09-28_12-59-55.png" />
+    <Resource Include="Screenshot (19).png" />
+    <Resource Include="Screenshot (39).png" />
+    <Resource Include="Screenshot (40).png" />
+    <Resource Include="Screenshot (68).png" />
+  </ItemGroup>
+
 </Project>

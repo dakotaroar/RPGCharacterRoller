@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace RPGCharacterRoller
 {
@@ -23,7 +24,7 @@ namespace RPGCharacterRoller
         private int _maxStrength = 20;
         private int _maxWisdom = 20;
         private List<RPGCharacter> _partyMembers = new List<RPGCharacter>();
-
+        private Brush _favoriteColor;
         private CharacterClasses _characterClasses = CharacterClasses.None;
         private Random _rng = new Random();
         #endregion
@@ -42,16 +43,24 @@ namespace RPGCharacterRoller
             get { return _partyMembers; }
             set { _partyMembers = value; }
         }
+        public Brush FavoriteColor
+        {
+            get { return _favoriteColor; }
+            set { _favoriteColor = value; }
+        }
+
         public int Charisma { get { return _charisma; } }
         public int Dexterity { get { return _dexterity; } }
         public int Intelligence { get { return _intelligence; } }
         public int Stamina { get { return _stamina; } }
         public int Strength { get { return _strength; } }
         public int Wisdom { get { return _wisdom; } }
+        
         #endregion
 
-        public RPGCharacter()
+        public RPGCharacter(Random rng)
         {
+            _rng = rng;
             Roll();
         }
 
@@ -64,6 +73,18 @@ namespace RPGCharacterRoller
             _stamina = _rng.Next(1, _maxStamina + 1);
             _strength = _rng.Next(1, _maxStrength + 1);
             _wisdom = _rng.Next(1, _maxWisdom + 1);
+        }
+
+        public static int RollDice(int numberOfDice, int sidesPerDice, Random r)
+        {
+            int total = 0;
+
+            for (int i = 0; i < numberOfDice; i++)
+            {
+                total = total + r.Next(1, sidesPerDice + 1);
+            }
+
+            return total;
         }
         #endregion
 
